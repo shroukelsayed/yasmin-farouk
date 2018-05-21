@@ -80,7 +80,7 @@ function onYouTubePlayerAPIReady() {
 
 	var getYTPVideoID=function(url){
 		var movieURL;
-		if(url.substr(0,16)=="https://youtu.be/"){
+		if(url.substr(0,17)=="https://youtu.be/"){
 			movieURL= url.replace("https://youtu.be/","");
 		}else if(url.indexOf("https")>-1){
 			movieURL = url.match(/[\\?&]v=([^&#]*)/)[1];
