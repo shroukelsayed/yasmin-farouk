@@ -80,9 +80,9 @@ function onYouTubePlayerAPIReady() {
 
 	var getYTPVideoID=function(url){
 		var movieURL;
-		if(url.substr(0,16)=="http://youtu.be/"){
-			movieURL= url.replace("http://youtu.be/","");
-		}else if(url.indexOf("http")>-1){
+		if(url.substr(0,16)=="https://youtu.be/"){
+			movieURL= url.replace("https://youtu.be/","");
+		}else if(url.indexOf("https")>-1){
 			movieURL = url.match(/[\\?&]v=([^&#]*)/)[1];
 		}else{
 			movieURL = url
@@ -954,7 +954,7 @@ function onYouTubePlayerAPIReady() {
 			var idx = jQuery("<span/>").addClass("mb_YTVPTime");
 
 			var vURL = data.videoURL;
-			if (vURL.indexOf("http") < 0)
+			if (vURL.indexOf("https") < 0)
 				vURL = jQuery.mbYTPlayer.locationProtocol + "//www.youtube.com/watch?v=" + data.videoURL;
 			var movieUrl = jQuery("<span/>").html(jQuery.mbYTPlayer.controls.ytLogo).addClass("mb_YTVPUrl ytpicon").attr("title", "view on YouTube").on("click", function () {window.open(vURL, "viewOnYT")});
 			var onlyVideo = jQuery("<span/>").html(jQuery.mbYTPlayer.controls.onlyYT).addClass("mb_OnlyYT ytpicon").on("click", function () {jQuery(YTPlayer).fullscreen(data.realfullscreen);});
